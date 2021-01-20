@@ -69,7 +69,6 @@ mysql> show tables;
 6 rows in set (0.01 sec)
 ```
 
-### TOPページの右上に「Login」/「Register」が追加されているのを確認
 ### Factoryを使ってユーザを追加する
 #### Factoryを実行する前にLaravelの設定が日本語が対応しているか確認
 - 下記変更
@@ -85,7 +84,7 @@ return [
     // 省略
 ];
 ```
-- Factoriesを使ってユーザを追加する
+#### Factoriesを使ってユーザを追加する
   - すでにUserテーブル用のFactoriesが存在するので、そちらを使う
   - /database/factories/UserFactory.php
 - /database/seeders/DatabaseSeeder.phpでユーザFactoriesを実行する用に修正
@@ -139,8 +138,9 @@ two_factor_recovery_codes: NULL
 
 # まとめ
 今回はLaravel8で追加されたjetstreamでログイン機能を作成しました。  
-記事では触れていない機能がまだまだあるので、興味ある方は調べてみてください
+記事では触れていない機能がまだまだあるので、興味ある方は調べてみてください。
 触れてない機能の例
 - 新規登録ページ
+- ログイン認証失敗時のエラー文言
 - パスワードを忘れた時の処理
 - ユーザ情報更新ページ
