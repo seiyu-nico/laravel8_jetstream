@@ -131,7 +131,8 @@ two_factor_recovery_codes: NULL
 ```
 
 ### URLをhttps固定にする
-```app/Providers/AppServiceProvider.php
+- 利用している環境の問題ですが、https通信をするのでLaravelのリンクURLをhttpsに強制します
+```/app/Providers/AppServiceProvider.php
 <?php
 
 namespace App\Providers;
@@ -146,7 +147,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        \URL::forceScheme('https');
+        \URL::forceScheme('https'); // ここを追加
     }
 }
 ```
