@@ -130,6 +130,27 @@ two_factor_recovery_codes: NULL
 1 row in set (0.00 sec)
 ```
 
+### URLをhttps固定にする
+```app/Providers/AppServiceProvider.php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+
+    // 省略
+
+    public function boot()
+    {
+        //
+        \URL::forceScheme('https');
+    }
+}
+```
+
 ### ログインする
 - ログイン画面http://example.con/login # URLは各自の環境に合わせてください
   - 前の手順で確認したemail, passwordを入力
